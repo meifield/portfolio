@@ -4,4 +4,6 @@ title: "Portfolio"
 
 This is a Quarto website.
 
+And will soon be my portfolio
+
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
