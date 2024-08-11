@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
+</head>
+<body>
+    <main>
+        <section id="projects">
+            <h1>My Projects</h1>
+            <div class="project-grid">
+                <div class="project-card" data-project="project1">
+                    <img src="project1-thumbnail.jpg" alt="Project 1">
+                    <h3>Project 1</h3>
+                    <p>Short description of Project 1</p>
+                    <button class="view-project-btn">View Project</button>
+                </div>
+                <div class="project-card" data-project="project2">
+                    <img src="project2-thumbnail.jpg" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>Short description of Project 2</p>
+                    <button class="view-project-btn">View Project</button>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </section>
+    </main>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-project-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
