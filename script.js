@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Project modal functionality
+    // Updated project modal functionality
     const projectCards = document.querySelectorAll('.project-card');
     const modal = document.getElementById('project-modal');
     const modalContent = document.getElementById('modal-project-content');
@@ -48,13 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 const projectTitle = card.querySelector('h3').textContent;
                 const projectDescription = card.querySelector('p').textContent;
                 const projectImage = card.querySelector('img').src;
+                const projectId = card.getAttribute('data-project');
+                
+                // Pre-populated project details
+                const projectDetails = {
+                    project1: "This is additional information about Project 1. It's a web application built with React and Next.js, focusing on creating a responsive and interactive user interface.",
+                    project2: "Project 2 is a mobile app developed using React Native and Expo. It features cross-platform compatibility and native-like performance.",
+                    project3: "Additional details for Project 3: This backend service, built with Node.js and Express, provides robust API endpoints and efficient data management.",
+                    project4: "Project 4 involves a machine learning model for image classification, utilizing TensorFlow and Keras to achieve high accuracy in various image recognition tasks.",
+                    project5: "The e-commerce platform in Project 5 is built with Django, offering a scalable solution with features like user authentication, product management, and secure payments.",
+                    project6: "Project 6 showcases a data visualization dashboard using D3.js, presenting complex datasets in an intuitive and interactive manner."
+                };
                 
                 modalContent.innerHTML = `
                     <h2>${projectTitle}</h2>
                     <div class="project-details">
                         <img src="${projectImage}" alt="${projectTitle}">
                         <p>${projectDescription}</p>
-                        <p>This is additional information about the project that can be customized for each project.</p>
+                        <p>${projectDetails[projectId] || "Additional project details coming soon."}</p>
                     </div>
                 `;
                 modal.style.display = 'block';
@@ -71,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
     // Contact form submission (you'll need to implement the server-side handling)
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
