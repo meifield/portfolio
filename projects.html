@@ -5,32 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.body.insertAdjacentHTML('afterbegin', data);
-            });
-    </script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="D:\Matthew stuff\portfolio\vectordesign (1).svg" alt="Logo" style="height: 50px;">
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <section id="projects">
-            <h1>My Projects</h1>
+        <section id="all-projects" class="section">
+            <h1 class="page-title">My Projects</h1>
             <div class="project-grid">
                 <div class="project-card" data-project="project1">
-                    <img src="project1-thumbnail.jpg" alt="Project 1">
-                    <h3>Project 1</h3>
-                    <p>Short description of Project 1</p>
-                    <button class="view-project-btn">View Project</button>
+                    <div class="project-info">
+                        <h3>Project 1</h3>
+                        <div class="project-preview">
+                            <img src="project1-preview.jpg" alt="Project 1 Preview">
+                        </div>
+                        <p>A web application built with React and Next.js.</p>
+                        <button class="view-project-btn">View Project</button>
+                    </div>
                 </div>
+                
                 <div class="project-card" data-project="project2">
-                    <img src="project2-thumbnail.jpg" alt="Project 2">
-                    <h3>Project 2</h3>
-                    <p>Short description of Project 2</p>
-                    <button class="view-project-btn">View Project</button>
+                    <div class="project-info">
+                        <h3>Project 2</h3>
+                        <div class="project-preview">
+                            <img src="project2-preview.jpg" alt="Project 2 Preview">
+                        </div>
+                        <p>A mobile app built with React Native and Expo.</p>
+                        <button class="view-project-btn">View Project</button>
+                    </div>
                 </div>
-                <!-- Add more project cards as needed -->
+                
+                <div class="project-card" data-project="project3">
+                    <div class="project-info">
+                        <h3>Project 3</h3>
+                        <div class="project-preview">
+                            <img src="project3-preview.jpg" alt="Project 3 Preview">
+                        </div>
+                        <p>A backend service built with Node.js and Express.</p>
+                        <button class="view-project-btn">View Project</button>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-project="project4">
+                    <div class="project-info">
+                        <h3>Project 4</h3>
+                        <div class="project-preview">
+                            <img src="project4-preview.jpg" alt="Project 4 Preview">
+                        </div>
+                        <p>A machine learning model for image classification.</p>
+                        <button class="view-project-btn">View Project</button>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-project="project5">
+                    <div class="project-info">
+                        <h3>Project 5</h3>
+                        <div class="project-preview">
+                            <img src="project5-preview.jpg" alt="Project 5 Preview">
+                        </div>
+                        <p>An e-commerce platform built with Django.</p>
+                        <button class="view-project-btn">View Project</button>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-project="project6">
+                    <div class="project-info">
+                        <h3>Project 6</h3>
+                        <div class="project-preview">
+                            <img src="project6-preview.jpg" alt="Project 6 Preview">
+                        </div>
+                        <p>A data visualization dashboard using D3.js.</p>
+                        <button class="view-project-btn">View Project</button>
+                    </div>
+                </div>
+                
             </div>
         </section>
     </main>
@@ -41,6 +102,15 @@
             <div id="modal-project-content"></div>
         </div>
     </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
