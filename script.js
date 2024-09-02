@@ -45,9 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const viewButton = card.querySelector('.view-project-btn');
             viewButton.addEventListener('click', (e) => {
                 e.preventDefault();
-                const baseUrl = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname + '/';
                 const projectId = card.getAttribute('data-project');
-                fetch(`${baseUrl}${projectId}.html`)
+                fetch(`portfolio/${projectId}.html`)
                     .then(response => response.text())
                     .then(data => {
                         modalContent.innerHTML = data;
@@ -65,9 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         `;
                         modal.style.display = 'block';
                     });
-
             });
         });
+
 
         closeModal.addEventListener('click', () => {
             modal.style.display = 'none';
