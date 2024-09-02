@@ -45,8 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const viewButton = card.querySelector('.view-project-btn');
             viewButton.addEventListener('click', (e) => {
                 e.preventDefault();
+                const baseUrl = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname + '/';
                 const projectId = card.getAttribute('data-project');
-                fetch(`./${projectId}.html`)
+                fetch(`${baseUrl}${projectId}.html`)
                     .then(response => response.text())
                     .then(data => {
                         modalContent.innerHTML = data;
