@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             viewButton.addEventListener('click', (e) => {
                 e.preventDefault();
                 const projectId = card.getAttribute('data-project');
-                fetch(`portfolio/${projectId}.html`)
+                fetch(`${projectId}.html`)
                     .then(response => response.text())
                     .then(data => {
                         modalContent.innerHTML = data;
