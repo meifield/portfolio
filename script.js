@@ -45,28 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const viewButton = card.querySelector('.view-project-btn');
             viewButton.addEventListener('click', (e) => {
                 e.preventDefault();
-                const projectId = card.getAttribute('data-project');
-                fetch(`${projectId}.html`)
-                    .then(response => response.text())
-                    .then(data => {
-                        modalContent.innerHTML = data;
-                        modal.style.display = 'block';
-                    })
-                    .catch(error => {
-                        console.error('Error loading project details:', error);
-                        modalContent.innerHTML = `
-                            <h2>${card.querySelector('h3').textContent}</h2>
-                            <p>${card.querySelector('p').textContent}</p>
-                            <div class="project-details">
-                                <img src="${card.querySelector('img').src}" alt="${card.querySelector('h3').textContent}">
-                                <p>This is a placeholder for the detailed project description. In a real scenario, this content would be loaded dynamically from the server.</p>
-                            </div>
-                        `;
-                        modal.style.display = 'block';
-                    });
+                const projectTitle = card.querySelector('h3').textContent;
+                const projectDescription = card.querySelector('p').textContent;
+                const projectImage = card.querySelector('img').src;
+                
+                modalContent.innerHTML = `
+                    <h2>${projectTitle}</h2>
+                    <div class="project-details">
+                        <img src="${projectImage}" alt="${projectTitle}">
+                        <p>${projectDescription}</p>
+                        <p>This is additional information about the project that can be customized for each project.</p>
+                    </div>
+                `;
+                modal.style.display = 'block';
             });
         });
-
 
         closeModal.addEventListener('click', () => {
             modal.style.display = 'none';
